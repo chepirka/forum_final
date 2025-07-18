@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Детали школы</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/main-styles.css">
+    <link rel="stylesheet" href="../styles/header-styles.css">
+    <link rel="stylesheet" href="../styles/school-details-styles.css">
+    <link rel="stylesheet" href="../styles/footer-styles.css">
+</head>
+<body>
+    <!-- <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    Образовательный портал
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="main.html"><i class="fas fa-home"></i> Главная</a></li>
+                        <li><a href="detsadSearch.html"><i class="fas fa-child"></i> Детсады</a></li>
+                        <li><a href="#" class="active"><i class="fas fa-school"></i> Школы</a></li>
+                        <li><a href="kollSearch.html"><i class="fas fa-user-graduate"></i> Колледжи</a></li>
+                        <li><a href="vusSearch.html"><i class="fas fa-university"></i> ВУЗы</a></li>
+                    </ul>
+                </nav>
+                <div class="user-actions">
+                    <button class="auth-btn">
+                        <i class="fas fa-sign-in-alt"></i> Войти
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header> -->
+    <div class="school-detail-container">
+        <a href="javascript:history.back()" class="back-button">
+            <i class="fas fa-arrow-left"></i> Назад к списку
+        </a>
+
+        <div class="school-header">
+            <h1 class="school-title" id="schoolName"></h1>
+            <div class="school-rating" id="schoolRating"></div>
+        </div>
+
+        <div class="school-gallery">
+            <div class="gallery-main" id="mainPhoto"></div>
+            <div class="gallery-thumbnails" id="thumbnails"></div>
+        </div>
+
+        <div class="school-info-grid">
+            <div>
+                <h2>О школе</h2>
+                <p class="school-description" id="schoolDescription"></p>
+
+                <h2>Профильные направления</h2>
+                <div class="school-features" id="profileContainer"></div>
+            </div>
+
+            <div>
+                <div class="contacts-card">
+                    <h3>Контактная информация</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> <span id="schoolAddress"></span></p>
+                    <p><i class="fas fa-phone"></i> <span id="schoolPhone"></span></p>
+                    <p><i class="fas fa-envelope"></i> <span id="schoolEmail"></span></p>
+                    <p><i class="fas fa-globe"></i> <a href="#" id="schoolWebsite"></a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Образовательный портал</h3>
+                    <p>Мы помогаем родителям найти лучшее образовательное учреждение для своих детей.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-vk"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Разделы</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Детские сады</a></li>
+                        <li><a href="#">Школы</a></li>
+                        <li><a href="#">Колледжи</a></li>
+                        <li><a href="#">ВУЗы</a></li>
+                        <li><a href="#">Доп. образование</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Помощь</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Как пользоваться порталом</a></li>
+                        <li><a href="#">Частые вопросы</a></li>
+                        <li><a href="#">Контакты</a></li>
+                        <li><a href="#">Обратная связь</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Контакты</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone-alt"></i> +7 (123) 456-78-90</li>
+                        <li><i class="fas fa-envelope"></i> info@education-portal.ru</li>
+                        <li><i class="fas fa-map-marker-alt"></i> г. Москва, ул. Образовательная, 1</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="copyright">
+                © 2023 Образовательный портал. Все права защищены.
+            </div>
+        </div>
+    </footer>
+
+
+<script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Получаем данные школы из sessionStorage
+            const schoolData = JSON.parse(sessionStorage.getItem('currentSchool'));
+
+            if (schoolData) {
+                // Заполняем заголовок
+                document.getElementById('schoolName').textContent = schoolData.name;
+
+                // Заполняем рейтинг
+                // let stars = '';
+                // for (let i = 0; i < 5; i++) {
+                //     stars += i < Math.floor(schoolData.rating) ? '★' : '☆';
+                // }
+                // document.getElementById('schoolRating').innerHTML = `
+                //     ${stars} <span style="margin-left: 0.5rem;">${schoolData.rating}</span>
+                // `;
+
+                // Заполняем галерею с кнопкой "Показать все"
+                if (schoolData.photos && schoolData.photos.length > 0) {
+                    const mainPhoto = document.getElementById('mainPhoto');
+                    const thumbnailsContainer = document.getElementById('thumbnails');
+                    
+                    // Устанавливаем первое фото как основное
+                    mainPhoto.style.backgroundImage = `url('${schoolData.photos[0]}')`;
+                    
+                    // Показываем только первые 14 фото + кнопку "Показать все" на 14 месте
+                    const maxVisibleThumbs = 14;
+                    const totalPhotos = schoolData.photos.length;
+                    const showAllNeeded = totalPhotos > maxVisibleThumbs + 1;
+                    
+                    // Добавляем миниатюры
+                    const thumbsToShow = showAllNeeded ? 
+                        schoolData.photos.slice(0, maxVisibleThumbs) : 
+                        schoolData.photos;
+                    
+                    thumbsToShow.forEach((photo, index) => {
+                        const thumb = document.createElement('div');
+                        thumb.className = 'thumbnail';
+                        thumb.style.backgroundImage = `url('${photo}')`;
+                        thumb.addEventListener('click', () => {
+                            mainPhoto.style.backgroundImage = `url('${photo}')`;
+                        });
+                        thumbnailsContainer.appendChild(thumb);
+                    });
+                    
+                    // Добавляем кнопку "Показать все" на 14 месте, если фото больше 14
+                    if (showAllNeeded) {
+                        const showAllBtn = document.createElement('div');
+                        showAllBtn.className = 'show-all-btn';
+                        showAllBtn.innerHTML = `<i class="fas fa-images"></i> Показать все (${totalPhotos})`;
+                        
+                        showAllBtn.addEventListener('click', function() {
+                            openGalleryModal(schoolData.photos);
+                        });
+                        
+                        thumbnailsContainer.appendChild(showAllBtn);
+                    }
+                    
+                    // Клик по основной фото тоже открывает модальное окно
+                    mainPhoto.addEventListener('click', function() {
+                        openGalleryModal(schoolData.photos, schoolData.photos.indexOf(mainPhoto.style.backgroundImage.replace(/url\(['"]?(.*?)['"]?\)/i, "$1")));
+                    });
+                }
+
+                // Остальной код заполнения данных остается без изменений
+                document.getElementById('schoolDescription').textContent = schoolData.fullDescription;
+
+                const profileContainer = document.getElementById('profileContainer');
+                schoolData.profile.forEach(prof => {
+                    const profEl = document.createElement('div');
+                    profEl.textContent = `✓ ${prof}`;
+                    profileContainer.appendChild(profEl);
+                });
+
+                document.getElementById('schoolAddress').textContent = schoolData.address;
+                document.getElementById('schoolPhone').textContent = schoolData.contacts.phone;
+                document.getElementById('schoolEmail').textContent = schoolData.contacts.email;
+                document.getElementById('schoolWebsite').textContent = schoolData.contacts.website;
+                document.getElementById('schoolWebsite').href = schoolData.contacts.website;
+
+                if (schoolData.reviews && schoolData.reviews.length > 0) {
+                    const reviewsContainer = document.getElementById('schoolReviews');
+                    schoolData.reviews.forEach(review => {
+                        const reviewEl = document.createElement('div');
+                        reviewEl.innerHTML = `
+                            <div style="margin-bottom: 1rem; padding: 1rem; background: #f8f9fa; border-radius: 8px;">
+                                <strong>${review.author}</strong>
+                                <div>${'★'.repeat(review.rating)}</div>
+                                <p>${review.text}</p>
+                            </div>
+                        `;
+                        reviewsContainer.appendChild(reviewEl);
+                    });
+                }
+            } else {
+                // Если данные не загружены, перенаправляем обратно
+                window.location.href = 'schools.html';
+            }
+            
+            // Обработчики для модального окна
+            document.querySelector('.modal-close').addEventListener('click', closeGalleryModal);
+            document.getElementById('galleryModal').addEventListener('click', function(e) {
+                if (e.target === this) closeGalleryModal();
+            });
+        });
+        
+        // Функция открытия модального окна с галереей
+        function openGalleryModal(photos, initialIndex = 0) {
+            const modal = document.getElementById('galleryModal');
+            const mainPhoto = document.getElementById('modalMainPhoto');
+            const thumbnailsContainer = document.getElementById('modalThumbnails');
+            
+            // Очищаем предыдущие миниатюры
+            thumbnailsContainer.innerHTML = '';
+            
+            // Устанавливаем начальное изображение
+            if (initialIndex >= 0 && initialIndex < photos.length) {
+                mainPhoto.style.backgroundImage = `url('${photos[initialIndex]}')`;
+            } else {
+                mainPhoto.style.backgroundImage = `url('${photos[0]}')`;
+            }
+            
+            // Добавляем миниатюры
+            photos.forEach((photo, index) => {
+                const thumb = document.createElement('div');
+                thumb.className = 'modal-thumb';
+                if (index === (initialIndex >= 0 ? initialIndex : 0)) {
+                    thumb.classList.add('active');
+                }
+                thumb.style.backgroundImage = `url('${photo}')`;
+                thumb.addEventListener('click', function() {
+                    mainPhoto.style.backgroundImage = `url('${photo}')`;
+                    document.querySelectorAll('.modal-thumb').forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                });
+                thumbnailsContainer.appendChild(thumb);
+            });
+            
+            // Показываем модальное окно
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        // Функция закрытия модального окна
+        function closeGalleryModal() {
+            document.getElementById('galleryModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    </script>
+    <!-- <div class="modal-overlay" id="galleryModal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-main-photo" id="modalMainPhoto"></div>
+            <div class="modal-thumbnails" id="modalThumbnails"></div>
+        </div>
+    </div> -->
+</body>
+
+</html>

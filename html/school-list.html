@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог школ | Образовательный портал</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/main-styles.css">
+    <link rel="stylesheet" href="../styles/header-styles.css">
+    <link rel="stylesheet" href="../styles/school-list-styles.css">
+    <link rel="stylesheet" href="../styles/footer-styles.css">
+    <link rel="stylesheet" href="../styles/school-list-media.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    Образовательный портал
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="main.html"><i class="fas fa-home"></i> Главная</a></li>
+                        <li><a href="detsadSearch.html"><i class="fas fa-child"></i> Детсады</a></li>
+                        <li><a href="#" class="active"><i class="fas fa-school"></i> Школы</a></li>
+                        <li><a href="kollSearch.html"><i class="fas fa-user-graduate"></i> Колледжи</a></li>
+                        <li><a href="vusSearch.html"><i class="fas fa-university"></i> ВУЗы</a></li>
+                    </ul>
+                </nav>
+                <div class="user-actions">
+                    <button class="auth-btn">
+                        <i class="fas fa-sign-in-alt"></i> Войти
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="page-header">
+            <h1 class="page-title">Каталог школ</h1>
+            <p class="page-subtitle">Найдите лучшую школу для вашего ребенка. Фильтруйте по району, рейтингу и
+                специализации.</p>
+        </div>
+
+        <div class="search-section">
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Введите название школы, адрес или район...">
+                <button class="search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+
+            <div class="filters-row">
+                <div class="filter-group">
+                    <label class="filter-label">Район</label>
+                    <div style="position: relative;">
+                        <i class="fas fa-map-marker-alt filter-icon"></i>
+                        <select class="filter-select" id="districtFilter">
+                            <option value="">Все районы</option>
+                            <option value="Заднепровский">Заднепровский</option>
+                            <option value="Ленинский">Ленинский</option>
+                            <option value="Промышленный">Промышленный</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label">Профиль</label>
+                    <div style="position: relative;">
+                        <i class="fas fa-atom filter-icon"></i>
+                        <select class="filter-select" id="profileFilter">
+                            <option value="">Любой профиль</option>
+                            <option value="Физико-математическое">Физико-математический</option>
+                            <option value="Технологическое">Технологический</option>
+                            <option value="Социально-экономическое">Социально-экономический</option>
+                            <option value="Гуманитарное">Гуманитарный</option>
+                            <option value="Химико-биологическое">Химико-биологический</option>
+                            <option value="Педогогическое">Педогогический</option>
+                            <option value="Психолого-педогогический класс">Психолого-педогогический класс</option>
+                            <option value="Предуниверситетский класс">Предуниверситетский класс</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button class="reset-filters">
+                    <i class="fas fa-redo"></i> Сбросить фильтры
+                </button>
+            </div>
+        </div>
+
+        <div class="schools-grid" id="schoolsGrid">
+            <!-- Школы будут загружены через JavaScript -->
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Образовательный портал</h3>
+                    <p>Мы помогаем родителям найти лучшее образовательное учреждение для своих детей.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-vk"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Разделы</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Детские сады</a></li>
+                        <li><a href="#">Школы</a></li>
+                        <li><a href="#">Колледжи</a></li>
+                        <li><a href="#">ВУЗы</a></li>
+                        <li><a href="#">Доп. образование</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Помощь</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Как пользоваться порталом</a></li>
+                        <li><a href="#">Частые вопросы</a></li>
+                        <li><a href="#">Контакты</a></li>
+                        <li><a href="#">Обратная связь</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Контакты</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone-alt"></i> +7 (123) 456-78-90</li>
+                        <li><i class="fas fa-envelope"></i> info@education-portal.ru</li>
+                        <li><i class="fas fa-map-marker-alt"></i> г. Москва, ул. Образовательная, 1</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="copyright">
+                © 2023 Образовательный портал. Все права защищены.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Данные о школах (в реальном проекте будут загружаться с сервера)
+        const schoolsData = [
+            {
+                "id": 1,
+                "name": "ЦО №1 \"Академия детства\"",
+                "address": "ул. Железнова, 2, Заднепровский район",
+                "profile": ["Химико-биологическое", "Гуманитарное", "Физико-математическое", "Психолого-педогогический класс", "Предуниверситетский класс"],
+                "image": "../images/ЦО №1  Академия детства (2).webp",
+                "fullDescription": "ЦО №1 \"Академия детства\" - это Центр равных, но разнообразных возможностей для учеников. В учреждении созданы условия для получения качественного образования.",
+                "district": "Заднепровский",
+                "contacts": {
+                    "phone": "+7(4812)44-62-29",
+                    "email": "akademiya.detstva1@yandex.ru",
+                    "website": "https://sh40-smolensk-r66.gosweb.gosuslugi.ru/"
+                },
+                "photos": [
+                    "../images/ЦО №1  Академия детства (2).webp",
+                    "../images/ЦО №1  Академия детства (1).webp",
+                    "../images/ЦО №1  Академия детства (3).webp",
+                    "../images/ЦО №1  Академия детства (7).webp",
+                    "../images/ЦО №1  Академия детства (5).webp",
+                    "../images/ЦО №1  Академия детства (6).webp",
+                    "../images/ЦО №1  Академия детства (4).webp"
+                ],
+                "isFavorite": false,
+                "isPopular": true
+            },
+            {
+                "id": 2,
+                "name": "МБОУ \"Гимназия №1 им. Н.М. Пржевальского\"",
+                "address": "ул. Ленина, 4, Ленинский район",
+                "profile": ["Гуманитарное", "Физико-математическое"],
+                "image": "../images/00_1484667457.jpg",
+                "fullDescription": "Гимназия приглашает всех, кто хочет получить качественное современное образование, всех, кого привлекает возможность учиться интересно и творчески. ",
+                "district": "Ленинский",
+                "contacts": {
+                    "phone": "+7 (4812) 38-21-80",
+                    "email": "pregik.sm@mail.ru",
+                    "website": "https://gimn1-smolensk-r66.gosweb.gosuslugi.ru"
+                },
+                "photos": [
+                    "../images/00_1484667457.jpg",
+
+                ],
+                "isFavorite": false,
+                "isPopular": true
+            },
+            {
+                "id": 3,
+                "name": "МБОУ «Гимназия № 4»",
+                "address": "ул. 25 сентября, 28а, Промышленный район",
+                "profile": ["Гуманитарное", "Физико-математическое"],
+                "image": "../images/fasad_2_.jpg",
+                "fullDescription": "Муниципальное бюджетное общеобразовательное учреждение «Гимназия № 4» города Смоленска основывает свою деятельность на традициях классического отечественного образования в сочетании с инновационными методиками и современными технологиями.",
+                "district": "Промышленный",
+                "contacts": {
+                    "phone": "+7 (4812) 55-21-42",
+                    "email": "gepsmol@mail.ru",
+                    "website": "https://gimn4-smolensk-r66.gosweb.gosuslugi.ru"
+                },
+                "photos": [
+                    "../images/fasad_2_.jpg",
+                ],
+                "isFavorite": false,
+                "isPopular": true
+            },
+            {
+                "id": 4,
+                "name": "МБОУ «Многопрофильный лицей»",
+                "address": "ул. Генерала Трошева, 10, Промышленный район",
+                "profile": ["Технологическое", "Гуманитарное", "Химико-биологическое", "Социально-экономическое"],
+                "image": "../images/photo1711107010.jpg",
+                "fullDescription": "",
+                "district": "Промышленный",
+                "contacts": {
+                    "phone": "7(4812) 30-48-28",
+                    "email": "smol.Licey67@yandex.ru",
+                    "website": "https://lic-mnogoprofilnyj-smolensk-r66.gosweb.gosuslugi.ru"
+                },
+                "photos": [
+                    "../images/photo1711107010.jpg",
+                ],
+                "isFavorite": false,
+                "isPopular": true
+            },
+            {
+                "id": 5,
+                "name": "МБОУ «Лицей № 1 им. академика Б.Н. Петрова»",
+                "address": "ул. Багратиона, 57, Ленинский район",
+                "profile": ["Технологическое", "Социально-экономическое"],
+                "image": "../images/photo_5339106290296812882_y.jpg",
+                "fullDescription": "Муниципальное бюджетное общеобразовательное учреждение «Лицей №1 им. академика Б.Н. Петрова» города Смоленска — Школа -партнер Национального исследовательского университета «Высшая школа экономики» ",
+                "district": "Ленинский",
+                "contacts": {
+                    "phone": "+7 (4812) 66-32-80",
+                    "email": "ekogimn2022@yandex.ru",
+                    "website": "https://lic1-smolensk-r66.gosweb.gosuslugi.ru"
+                },
+                "photos": [
+                    "../images/photo_5339106290296812882_y.jpg",
+                ],
+                "isFavorite": false,
+                "isPopular": true
+            },
+            {
+                "id": 6,
+                "name": "МБОУ «СШ № 1»",
+                "address": "ул. Соболева, 24, Промышленный район",
+                "profile": ["Педогогическое", "Психолого-педогогический класс"],
+                "image": "../images/8a_CYqeWjSI.jpg",
+                "fullDescription": "Миссия нашей школы - дать поверить каждому маленькому ученику, что он всё умеет, что у него всё получится, не дать погаснуть огоньку радостных открытий в глазах каждого ребёнка.",
+                "district": "Промышленный",
+                "contacts": {
+                    "phone": "+7 (4812) 38-23-94",
+                    "email": "shkola1.smolensk@yandex.ru",
+                    "website": "https://sh1-smolensk-r66.gosweb.gosuslugi.ru"
+                },
+                "photos": [
+                    "../images/8a_CYqeWjSI.jpg",
+                ],
+                "isFavorite": false,
+                "isPopular": true
+            },
+            {
+                "id": 7,
+                "name": "",
+                "address": ", район",
+                "profile": [],
+                "image": "../images/",
+                "fullDescription": "",
+                "district": "",
+                "contacts": {
+                    "phone": "",
+                    "email": "",
+                    "website": "https://"
+                },
+                "photos": [
+                    "../images/",
+                ],
+                "isFavorite": false,
+                "isPopular": true
+            },
+            {
+                "id": 8,
+                "name": "",
+                "address": ", район",
+                "profile": [],
+                "image": "../images/",
+                "fullDescription": "",
+                "district": "",
+                "contacts": {
+                    "phone": "",
+                    "email": "",
+                    "website": "https://"
+                },
+                "photos": [
+                    "../images/",
+                ],
+                "isFavorite": false,
+                "isPopular": true
+            },
+
+        ];
+
+        // Функция для отображения карточек школ
+        function renderSchools(schools) {
+            const schoolsGrid = document.getElementById('schoolsGrid');
+            schoolsGrid.innerHTML = '';
+
+            schools.forEach(school => {
+                const card = document.createElement('div');
+                card.className = 'school-card';
+
+                // Формируем звезды рейтинга
+                const fullStars = Math.floor(school.rating);
+                const hasHalfStar = school.rating % 1 >= 0.5;
+                let starsHTML = '';
+
+                for (let i = 1; i <= 5; i++) {
+                    if (i <= fullStars) {
+                        starsHTML += '<i class="fas fa-star"></i>';
+                    } else if (i === fullStars + 1 && hasHalfStar) {
+                        starsHTML += '<i class="fas fa-star-half-alt"></i>';
+                    } else {
+                        starsHTML += '<i class="far fa-star"></i>';
+                    }
+                }
+
+                // Формируем бейдж "Популярная" если нужно
+                const badgeHTML = school.isPopular ?
+                    '<div class="school-badge"><i class="fas fa-fire"></i> Популярная</div>' : '';
+
+                card.innerHTML = `
+                    <div class="school-image" style="background-image: url('${school.image}')">
+                        ${badgeHTML}
+                    </div>
+                    <div class="school-content">
+                        <h3 class="school-name">${school.name}</h3>
+                        <div class="school-info">
+                            <div class="school-location">
+                                <i class="fas fa-map-marker-alt"></i> ${school.address}
+                            </div>
+                        </div>
+                        <div class="school-actions">
+                            <a href="#" class="details-btn" data-id="${school.id}">Подробнее</a>
+                            <button class="favorite-btn ${school.isFavorite ? 'active' : ''}" data-id="${school.id}">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+
+                schoolsGrid.appendChild(card);
+            });
+
+            // Добавляем обработчики для кнопок "Подробнее"
+            document.querySelectorAll('.details-btn').forEach(btn => {
+                btn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const schoolId = parseInt(this.getAttribute('data-id'));
+                    showSchoolDetails(schoolId);
+                });
+            });
+
+            // Добавляем обработчики для кнопок "Избранное"
+            document.querySelectorAll('.favorite-btn').forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const schoolId = parseInt(this.getAttribute('data-id'));
+                    const school = schoolsData.find(s => s.id === schoolId);
+                    if (school) {
+                        school.isFavorite = !school.isFavorite;
+                        this.classList.toggle('active');
+                    }
+                });
+            });
+        }
+
+        // Функция для показа деталей школы
+        function showSchoolDetails(schoolId) {
+            const school = schoolsData.find(item => item.id === schoolId);
+            if (!school) return;
+
+            sessionStorage.setItem('currentSchool', JSON.stringify(school));
+
+            // Проверяем доступность страницы перед переходом
+            fetch('school-details.html')
+                .then(response => {
+                    if (response.ok) {
+                        window.location.href = 'school-details.html';
+                    } else {
+                        // Если файл не найден, показываем модальное окно
+                        showSchoolModal(school);
+                    }
+                })
+                .catch(error => {
+                    console.error('Ошибка:', error);
+                    showSchoolModal(school);
+                });
+        }
+
+        // Функция для показа модального окна с информацией
+        function showSchoolModal(school) {
+            const modal = document.createElement('div');
+            modal.className = 'modal-overlay';
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <button class="modal-close-btn">&times;</button>
+                    <h2>${school.name}</h2>
+                    <div class="modal-school-info">
+                        <p><strong>Адрес:</strong> ${school.address}</p>
+                        <p><strong>Профили:</strong> ${school.profile.join(", ")}</p>
+                        ${school.contacts ? `<p><strong>Контакты:</strong> ${school.contacts.phone}, ${school.contacts.email}</p>` : ''}
+                    </div>
+                    <div class="modal-school-description">
+                        <h3>Описание:</h3>
+                        <p>${school.fullDescription || 'Описание школы отсутствует.'}</p>
+                    </div>
+                </div>
+            `;
+
+            modal.querySelector('.modal-close-btn').addEventListener('click', () => {
+                modal.remove();
+            });
+
+            document.body.appendChild(modal);
+        }
+
+        // Функция для фильтрации школ
+        function filterSchools() {
+            const districtFilter = document.getElementById('districtFilter').value;
+            const profileFilter = document.getElementById('profileFilter').value;
+            const searchInput = document.querySelector('.search-input').value.toLowerCase();
+
+            let filtered = schoolsData.filter(school => {
+                // Проверка поискового запроса
+                const matchesSearch = searchInput === '' ||
+                    school.name.toLowerCase().includes(searchInput) ||
+                    school.address.toLowerCase().includes(searchInput);
+
+                const matchesDistrict = districtFilter === '' || school.district === districtFilter;
+                const matchesProfile = profileFilter === '' ||
+                    school.profile.some(p => p.includes(profileFilter));
+
+                return matchesSearch && matchesDistrict && matchesProfile;
+            });
+
+            renderSchools(filtered);
+        }
+
+        // Инициализация - показываем все школы при загрузке
+        document.addEventListener('DOMContentLoaded', () => {
+            renderSchools(schoolsData);
+
+            // Обработчики событий для фильтров
+            document.getElementById('districtFilter').addEventListener('change', filterSchools);
+            document.getElementById('profileFilter').addEventListener('change', filterSchools);
+
+            // Обработчик для поиска
+            document.querySelector('.search-button').addEventListener('click', filterSchools);
+            document.querySelector('.search-input').addEventListener('keyup', (e) => {
+                if (e.key === 'Enter') filterSchools();
+            });
+
+            // Обработчик для сброса фильтров
+            document.querySelector('.reset-filters').addEventListener('click', () => {
+                document.getElementById('districtFilter').value = '';
+                document.getElementById('profileFilter').value = '';
+                document.querySelector('.search-input').value = '';
+                renderSchools(schoolsData);
+            });
+        });
+    </script>
+
+    <style>
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow: auto;
+            position: relative;
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .modal-school-info {
+            margin: 1rem 0;
+        }
+
+        .modal-school-description {
+            margin-top: 1.5rem;
+        }
+    </style>
+</body>
+
+</html>
