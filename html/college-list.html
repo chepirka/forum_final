@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог школ | Образовательный портал</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/main-styles.css">
+    <link rel="stylesheet" href="../styles/header-styles.css">
+    <link rel="stylesheet" href="../styles/school-list-styles.css">
+    <link rel="stylesheet" href="../styles/footer-styles.css">
+    <link rel="stylesheet" href="../styles/school-list-media.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    Образовательный портал
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="main.html"><i class="fas fa-home"></i> Главная</a></li>
+                        <li><a href="kindergarten-list.html"><i class="fas fa-child"></i> Детсады</a></li>
+                        <li><a href="school-list.html"><i class="fas fa-school"></i> Школы</a></li>
+                        <li><a href="#" class="active"><i class="fas fa-user-graduate"></i> Колледжи</a></li>
+                        <li><a href="university-list.html"><i class="fas fa-university"></i> ВУЗы</a></li>
+                        <li><a href="other-list.html"><i class="fas fa-building"></i> Прочее</a></li>
+                    </ul>
+                </nav>
+                <!-- <div class="user-actions">
+                    <button class="auth-btn">
+                        <i class="fas fa-sign-in-alt"></i> Войти
+                    </button>
+                </div> -->
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="page-header">
+            <h1 class="page-title">Каталог колледжей и техникумов</h1>
+            <p class="page-subtitle">Найдите лучший колледж или техникум. Фильтруйте по району, рейтингу и
+                специализации.</p>
+        </div>
+
+        <div class="search-section">
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Введите название школы, адрес или район...">
+                <button class="search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+
+            <div class="filters-row">
+                <div class="filter-group">
+                    <label class="filter-label">Район</label>
+                    <div style="position: relative;">
+                        <i class="fas fa-map-marker-alt filter-icon"></i>
+                        <select class="filter-select" id="districtFilter">
+                            <option value="">Все районы</option>
+                            <option value="Заднепровский">Заднепровский</option>
+                            <option value="Ленинский">Ленинский</option>
+                            <option value="Промышленный">Промышленный</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label">Напрваление</label>
+                    <div style="position: relative;">
+                        <i class="fas fa-atom filter-icon"></i>
+                        <select class="filter-select" id="profileFilter">
+                            <option value="">Любое направление</option>
+                            <option value="Землеустройство">Землеустройство</option>
+                            <option value="Архитектура">Архитектура</option>
+                            <option value="Строительство">Строительство</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button class="reset-filters">
+                    <i class="fas fa-redo"></i> Сбросить фильтры
+                </button>
+            </div>
+        </div>
+
+        <div class="schools-grid" id="schoolsGrid">
+            <!-- Школы будут загружены через JavaScript -->
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Образовательный портал</h3>
+                    <p>Мы помогаем родителям найти лучшее образовательное учреждение для своих детей.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-vk"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Разделы</h3>
+                    <ul class="footer-links">
+                        <li><a href="kindergarten-list.html">Детские сады</a></li>
+                        <li><a href="school-list.html">Школы</a></li>
+                        <li><a href="#">Колледжи</a></li>
+                        <li><a href="university-list.html">ВУЗы</a></li>
+                        <li><a href="other-list.html">Доп. образование</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Помощь</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Как пользоваться порталом</a></li>
+                        <li><a href="#">Частые вопросы</a></li>
+                        <li><a href="#">Контакты</a></li>
+                        <li><a href="#">Обратная связь</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Контакты</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone-alt"></i> +7 (123) 456-78-90</li>
+                        <li><i class="fas fa-envelope"></i> info@education-portal.ru</li>
+                        <li><i class="fas fa-map-marker-alt"></i> г. Москва, ул. Образовательная, 1</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="copyright">
+                © 2023 Образовательный портал. Все права защищены.
+            </div>
+        </div>
+    </footer>
+    <script src="../js/college-list.js"></script>
+</body>
+
+</html>

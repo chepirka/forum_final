@@ -1,0 +1,59 @@
+[
+    {
+        "id": 1,
+        "name": "МБОУ «Многопрофильный лицей»",
+        "address": "ул. Генерала Трошева, 10, Промышленный район",
+        "profile": [
+            "Строительство"
+        ],
+        "image": "../images/photo1711107010.jpg",
+        "fullDescription": "",
+        "district": "Промышленный",
+        "contacts": {
+            "phone": "7(4812) 30-48-28",
+            "email": "smol.Licey67@yandex.ru",
+            "website": "https://lic-mnogoprofilnyj-smolensk-r66.gosweb.gosuslugi.ru"
+        },
+        "photos": [
+            "../images/photo1711107010.jpg"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "МБОУ «Многопрофильный лицей»",
+        "address": "ул. Генерала Трошева, 10, Промышленный район",
+        "profile": [
+            "Архитектура"
+        ],
+        "image": "../images/photo1711107010.jpg",
+        "fullDescription": "",
+        "district": "Промышленный",
+        "contacts": {
+            "phone": "7(4812) 30-48-28",
+            "email": "smol.Licey67@yandex.ru",
+            "website": "https://lic-mnogoprofilnyj-smolensk-r66.gosweb.gosuslugi.ru"
+        },
+        "photos": [
+            "../images/photo1711107010.jpg"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "МБОУ «Многопрофильный лицей»",
+        "address": "ул. Генерала Трошева, 10, Промышленный район",
+        "profile": [
+            "Землеустройство"
+        ],
+        "image": "../images/photo1711107010.jpg",
+        "fullDescription": "",
+        "district": "Промышленный",
+        "contacts": {
+            "phone": "7(4812) 30-48-28",
+            "email": "smol.Licey67@yandex.ru",
+            "website": "https://lic-mnogoprofilnyj-smolensk-r66.gosweb.gosuslugi.ru"
+        },
+        "photos": [
+            "../images/photo1711107010.jpg"
+        ]
+    }
+]

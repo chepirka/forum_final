@@ -1,0 +1,59 @@
+[
+    {
+        "id": 1,
+        "name": "МБОУ «СШ № 1»",
+        "address": "ул. Соболева, 24, Промышленный район",
+        "profile": [
+            "Архитектура"
+        ],
+        "image": "../images/8a_CYqeWjSI.jpg",
+        "fullDescription": "Миссия нашей школы - дать поверить каждому маленькому ученику, что он всё умеет, что у него всё получится, не дать погаснуть огоньку радостных открытий в глазах каждого ребёнка.",
+        "district": "Промышленный",
+        "contacts": {
+            "phone": "+7 (4812) 38-23-94",
+            "email": "shkola1.smolensk@yandex.ru",
+            "website": "https://sh1-smolensk-r66.gosweb.gosuslugi.ru"
+        },
+        "photos": [
+            "../images/8a_CYqeWjSI.jpg"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "МБОУ «СШ № 1»",
+        "address": "ул. Соболева, 24, Промышленный район",
+        "profile": [
+            "Строительство"
+        ],
+        "image": "../images/8a_CYqeWjSI.jpg",
+        "fullDescription": "Миссия нашей школы - дать поверить каждому маленькому ученику, что он всё умеет, что у него всё получится, не дать погаснуть огоньку радостных открытий в глазах каждого ребёнка.",
+        "district": "Промышленный",
+        "contacts": {
+            "phone": "+7 (4812) 38-23-94",
+            "email": "shkola1.smolensk@yandex.ru",
+            "website": "https://sh1-smolensk-r66.gosweb.gosuslugi.ru"
+        },
+        "photos": [
+            "../images/8a_CYqeWjSI.jpg"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "МБОУ «СШ № 1»",
+        "address": "ул. Соболева, 24, Промышленный район",
+        "profile": [
+            "Землеустройство"
+        ],
+        "image": "../images/8a_CYqeWjSI.jpg",
+        "fullDescription": "Миссия нашей школы - дать поверить каждому маленькому ученику, что он всё умеет, что у него всё получится, не дать погаснуть огоньку радостных открытий в глазах каждого ребёнка.",
+        "district": "Промышленный",
+        "contacts": {
+            "phone": "+7 (4812) 38-23-94",
+            "email": "shkola1.smolensk@yandex.ru",
+            "website": "https://sh1-smolensk-r66.gosweb.gosuslugi.ru"
+        },
+        "photos": [
+            "../images/8a_CYqeWjSI.jpg"
+        ]
+    }
+]

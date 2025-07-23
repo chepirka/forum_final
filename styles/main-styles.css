@@ -8,7 +8,7 @@
     --success: #4cc9f0;
     --warning: #f72585;
 }
-        
+
 * {
     margin: 0;
     padding: 0;
@@ -16,14 +16,57 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-decoration: none;
 }
-        
+
 body {
     background-color: #f5f7fa;
     color: var(--dark);
     line-height: 1.6;
 }
+
 .container {
     width: 90%;
     max-width: 1400px;
     margin: 0 auto;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow: auto;
+    position: relative;
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.modal-school-info {
+    margin: 1rem 0;
+}
+
+.modal-school-description {
+    margin-top: 1.5rem;
 }
