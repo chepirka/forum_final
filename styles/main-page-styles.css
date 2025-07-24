@@ -114,3 +114,124 @@
         transform: translateY(0);
     }
 }
+
+
+
+#navbar {
+    width: 0px;
+    height: 0px;
+    overflow: hidden;
+}
+
+/* @media(max-width: 992px) {
+    .container {
+        width: 760px;
+    }
+
+    #navbar {
+        width: 40px;
+        height: 40px;
+        overflow: visible;
+    }
+
+    .header-content {
+        width: 0px;
+        height: 0px;
+        overflow: hidden;
+        position: absolute;
+    }
+    #hamburger-icon {
+        display: block;
+    }
+        #nav-links {
+        flex-direction: column;
+        position: absolute;
+        align-items:center;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(22, 22, 22, 0.9);
+        display: none;
+        z-index: 100;
+        justify-content: center;
+    }
+
+    #nav-links li {
+        text-align: center;
+        padding: 20px 0;
+    }
+} */
+
+
+
+
+
+@media(max-width: 576px) {
+    .container {
+        width: auto;
+    }
+
+    header {
+        height: 70px;
+        padding: 0.3rem;
+        justify-content: center;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+        height: 60px;
+    }
+
+    #navbar {
+        width: 40px;
+        height: 40px;
+        overflow: visible;
+    }
+
+    .header-content nav {
+        width: 0px;
+        height: 0px;
+        overflow: hidden;
+        position: absolute;
+    }
+
+    #hamburger-icon {
+        display: block;
+    }
+
+    #nav-links {
+        flex-direction: column;
+        position: absolute;
+        align-items: center;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(22, 22, 22, 0.9);
+        display: none;
+        z-index: 100;
+        justify-content: center;
+    }
+
+    #nav-links li {
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .hero {
+        padding-top: 1rem;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .footer-content {
+        padding-left: 10px;
+    }
+}
