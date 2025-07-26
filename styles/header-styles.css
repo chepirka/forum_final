@@ -81,3 +81,123 @@ nav a i {
 .auth-btn i {
     margin-right: 8px;
 }
+
+.burger-menu {
+    display: none;
+    position: relative;
+    z-index: 1000;
+}
+
+.burger-icon {
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    padding: 15px;
+    transition: transform 0.3s;
+    /* Отключает подсветку при тапе */
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+
+    /* Убирает стандартные стили фокуса */
+    outline: none !important;
+    box-shadow: none !important;
+
+    /* Отключает выделение */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    /* Для старых Android */
+    -webkit-touch-callout: none;
+}
+
+.burger-content {
+    position: fixed;
+    top: 0;
+    right: -100vw;
+    width: 100vw;
+    height: 100vh;
+    background: #fff;
+    box-shadow: -2px 0 15px rgba(0, 0, 0, 0.1);
+    padding: 20px 20px 20px;
+    transition: right 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    overflow-y: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+html.burger-active {
+    overflow: hidden;
+    margin-right: 0 !important;
+}
+
+.burger-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+    z-index: 999;
+}
+
+/* Состояние открытого меню */
+.burger-active .burger-content {
+    right: 0;
+}
+
+.burger-active .burger-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+.burger-active .burger-icon {
+    transform: rotate(90deg);
+}
+
+.burger-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.burger-nav li {
+    margin-bottom: 10px;
+}
+
+.burger-icon::-moz-focus-inner {
+    border: 0;
+}
+
+/* Убирает голубой фон при клике в Chrome */
+.burger-icon:active,
+.burger-icon:focus {
+    background-color: transparent !important;
+}
+
+.burger-nav a {
+    display: block;
+    padding: 12px 15px;
+    color: #333;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.burger-nav a:hover {
+    background: #f5f5f5;
+    color: #0066cc;
+}
+
+.burger-nav i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+.close-burger {
+    color: black;
+}

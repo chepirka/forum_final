@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../styles/main-styles.css">
     <link rel="stylesheet" href="../styles/header-styles.css">
     <link rel="stylesheet" href="../styles/school-details-styles.css">
+    <link rel="stylesheet" href="../styles/media.css">
     <link rel="stylesheet" href="../styles/footer-styles.css">
 </head>
 
@@ -35,6 +36,29 @@
                         <i class="fas fa-sign-in-alt"></i> Войти
                     </button>
                 </div> -->
+                <div class="burger-menu">
+                    <div class="burger-icon" onclick="toggleBurger()">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                    <div class="burger-content">
+                        <ul class="burger-nav">
+                            <li><a href="main.html" onclick="toggleBurger()"><i class="fas fa-home"></i> Главная</a>
+                            </li>
+                            <li><a href="kindergarten-list.html" onclick="toggleBurger()"><i class="fas fa-child"></i>
+                                    Детсады</a></li>
+                            <li><a href="school-list.html" onclick="toggleBurger()"><i class="fas fa-school"></i>
+                                    Школы</a></li>
+                            <li><a href="college-list.html" onclick="toggleBurger()"><i
+                                        class="fas fa-user-graduate"></i> Колледжи</a></li>
+                            <li><a href="university-list.html" onclick="toggleBurger()"><i
+                                        class="fas fa-university"></i> ВУЗы</a></li>
+                            <li><a href="other-list.html" onclick="toggleBurger()"><i class="fas fa-building"></i>
+                                    Прочее</a></li>
+                        </ul>
+                        <i class="fas fa-xmark close-burger fa-2x" onclick="toggleBurger()"></i>
+                    </div>
+                    <!-- <div class="burger-overlay" onclick="toggleBurger()"></div> -->
+                </div>
             </div>
         </div>
     </header>
@@ -118,7 +142,7 @@
             </div>
 
             <div class="copyright">
-                © 2023 Образовательный портал. Все права защищены.
+                © 2025 Образовательный портал. Все права защищены.
             </div>
         </div>
     </footer>
@@ -131,6 +155,7 @@
         </div>
     </div> -->
     <script src="../js/school-details.js"></script>
+    <script src="../js/main-page.js"></script>
 </body>
 
 </html>

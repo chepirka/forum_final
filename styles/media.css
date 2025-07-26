@@ -1,0 +1,145 @@
+@media(max-width: 1400px) {
+    .container {
+        width: 1200px;
+        padding: 0px 20px 0px 20px;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    nav li {
+        margin-left: 0.5rem;
+    }
+}
+
+@media(max-width: 1200px) {
+    .container {
+        width: 992px;
+        padding: 0px;
+    }
+
+    .logo {
+        font-size: 1.1rem;
+    }
+
+    .logo i {
+        margin-left: 10px;
+        margin-right: 5px;
+    }
+
+    nav li {
+        margin-left: 0.2rem;
+        margin-right: 0.2rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        width: 768px;
+    }
+
+    .burger-menu {
+        display: block;
+    }
+
+    .header-content nav {
+        width: 0px;
+        height: 0px;
+        overflow: hidden;
+        position: absolute;
+    }
+
+    .header-content {
+        width: 100%;
+        height: 60px;
+        padding: 0px;
+    }
+
+    header {
+        height: 70px;
+        padding: 0.3rem 0rem 0.3rem 0rem;
+        justify-content: center;
+    }
+
+    .hero-subtitle {
+        width: 100%;
+    }
+
+    .footer-content {
+        padding-left: 10px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        width: 577px;
+    }
+}
+
+
+
+@media(max-width: 576px) {
+    .container {
+        width: auto;
+        padding: 0px;
+        margin-left: 5px;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+        padding: 5px;
+    }
+
+    .page-title {
+        font-size: 2rem;
+        padding: 5px;
+    }
+
+    .hero-subtitle {
+        padding: 5px;
+    }
+
+    .page-subtitle {
+        padding: 5px;
+    }
+
+    .cta-button {
+        padding: 1rem 1rem;
+    }
+
+    .features {
+        margin: 2rem auto;
+    }
+
+    .feature-card {
+        padding: 1rem;
+    }
+
+    #profileFilter {
+        width: 180px;
+    }
+
+    .reset-filters {
+        width: 180px;
+        margin-top: 25px;
+        margin-left: 0px;
+    }
+
+    .search-section {
+        padding: 1rem;
+    }
+
+    .container {
+        margin: 0;
+        padding: 4px;
+    }
+}
+
+@media(max-width: 320px) {
+    .features {
+        margin: 2rem auto;
+        padding: 0.5rem;
+    }
+}
