@@ -200,7 +200,6 @@ function displaySchools(schools) {
                     <div class="school-location">
                         <i class="fas fa-map-marker-alt"></i> ${school.address || 'Адрес не указан'}
                     </div>
-                    ${school.district ? `<div class="school-district">Район: ${school.district}</div>` : ''}
                 </div>
                 <div class="school-actions">
                     <a href="#" class="details-btn" data-id="${school.id}">Подробнее</a>
