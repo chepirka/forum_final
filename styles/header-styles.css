@@ -35,6 +35,13 @@ nav li {
     margin-left: 1.5rem;
 }
 
+.auth-btn a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
 nav a {
     color: white;
     text-decoration: none;
